@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import {
-  sum, capitalize, reverseString, calculator, caesarCipher,
+  sum, capitalize, reverseString, calculator, caesarCipher, analyzeArray,
 } from './index';
 
 test('testing sum', () => {
@@ -27,4 +27,15 @@ test('caesarCipher', () => {
   expect(caesarCipher('xyz', 3)).toBe('abc');
   expect(caesarCipher('ABC', 3)).toBe('DEF');
   expect(caesarCipher('aBc', 3)).toBe('dEf');
+});
+
+test('analyzeArray', () => {
+  const arr = [1, 8, 3, 4, 2, 6];
+  const object = {
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  };
+  expect(analyzeArray(arr)).toMatchObject(object);
 });

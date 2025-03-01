@@ -36,4 +36,31 @@ function caesarCipher(string, shiftFactor) {
     })
     return str.join('')
 }
-export {sum, capitalize, reverseString, calculator, caesarCipher}
+
+function analyzeArray(arr) {
+    let average = getAverage(arr);
+    let min = getMin(arr);
+    let max = getMax(arr);
+    let length = arr.length;
+    return {
+        average: average,
+        min: min,
+        max: max,
+        length: length
+    }
+}
+
+function getAverage(arr) {
+    let sum = 0;
+    arr.forEach(elem => sum += elem)
+    return sum / arr.length;
+}
+
+function getMin(arr) {
+    return Math.min(...arr)
+}
+function getMax(arr) {
+    return Math.max(...arr)
+}
+
+export {sum, capitalize, reverseString, calculator, caesarCipher, analyzeArray}
